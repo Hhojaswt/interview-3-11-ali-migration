@@ -26,6 +26,13 @@ The script connected over SSH to each server automatically and updated the mount
 
 **Replication**
 <这里，服务器正从本地传输数据到云端，可以后面介绍你怎么帮助客户在云上对recovery service vault(储存传输数据的地方)去配置diagnostic setting，写query去并且配合logic app等自动化报警系统>
+通过diagnostic setting 收集 Windows/Linux 服务器日志、应用程序日志（IIS、Nginx、Tomcat）、网络流量监控（NSG Flow Logs） 以及 数据库查询性能（SQL Query Store），存储到 Log Analytics Workspace（LA） 进行处理。数据分析与可视化：
+
+编写 Kusto Query Language（KQL） 查询规则，生成 业务健康监控报表、资源利用率趋势分析、异常日志筛选 等可视化数据面板。 通过 Azure Monitor Workbooks 构建 自定义监控面板，提供高层级的系统运行状态概览。 网络故障排查：
+
+结合 Network Watcher、Packet Capture、Connection Monitor，分析 Azure 资源之间的网络连通性问题，如 ExpressRoute 连接丢包、VNet Peering 访问异常、NSG 端口封锁，提高整体网络稳定性。 监控 负载均衡器（ALB/NLB）、CDN 流量、VPN 网关性能，优化跨区域/跨站点的访问体验。
+
+监控 Azure VM 运行状态、数据库响应时间、API 请求失败率，设置 Metrics-based Alerts，提前发现潜在问题。 结合 Action Groups，配置 多渠道告警通知（邮件、短信、Teams、ServiceNow），确保关键事件即时响应。 自动化事件响应
 When it was time to actually replication, the customer was using Azure Private Link for the replication traffic, which meant all data flowed through private endpoints. 
 Initially, some of their local DNS servers couldn’t resolve the private endpoint correctly, causing replication failures on a few machines. 
 We caught this by running checks like tnc (Test-NetConnection), telnet, or ping to see if we could reach the endpoint. 
