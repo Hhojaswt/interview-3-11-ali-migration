@@ -49,3 +49,6 @@ Another issue was network latency in certain regions, which we tracked down usin
 Once we were sure everything looked good, we scheduled the final cutover to avoid the customer’s peak business hours. Honestly, at that point, it was pretty smooth sailing. We hit our RTO of 2 hours, so no major drama.
  
 <这里，服务器已经全部迁移上云，可以后面介绍你怎么负责帮客户搭建云上监控系统>
+crash consistency(崩溃一致性)
+app consistency(应用一致性)
+
